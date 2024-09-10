@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Submission</title>
+    <link rel="stylesheet" href="./style.css" />
+    <!-- <script>
+      function validateForm() {
+        let username = document.forms["myForm"]["username"].value;
+        let email = document.forms["myForm"]["email"].value;
+        let password = document.forms["myForm"]["password"].value;
+        let program = document.forms["myForm"]["program"].value;
+        let missingFields = [];
+
+        // Validate Username
+        if (!/^[a-zA-Z]+$/.test(username)) {
+          missingFields.push(
+            "Username must be filled and can not contain any number"
+          );
+        }
+
+        // Validate Email
+        if (email === "" || !email.includes("@")) {
+          missingFields.push(
+            "Email must be filled and must use the right email"
+          );
+        }
+
+        // Validate Program (radio buttons)
+        if (program === "") {
+          missingFields.push("Program Studi must be filled");
+        }
+
+        // Validate Password
+        if (
+          password === "" ||
+          !/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)[A-Za-z\d]{8,}$/.test(password)
+        ) {
+          missingFields.push(
+            "Password must be at least 8 characters long, include at least one uppercase letter, one lowercase letter, and one number"
+          );
+        }
+
+        // If missing fields exist, show an alert
+        if (missingFields.length > 0) {
+          alert(
+            "Please fill in the following fields correctly:\n" +
+              missingFields.join("\n")
+          );
+          return false; // Prevent form submission
+        }
+
+        if (missingFields.length == 0) {
+          alert("Form submitted successfully!");
+          return true; // Proceed to submit if everything is validated
+        }
+      }
+    </script> -->
+  </head>
+  <body>
+    <h1 class="Headline">Student Sign On Form</h1>
+
+    <div class="Form-questions">
+    <form name="myForm" action="submit.php" method="POST">
+      <!-- Username -->
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" /><br /><br />
+
+      <!-- Email -->
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" /><br /><br />
+
+      <!-- University -->
+      <label for="university">Perguruan Tinggi:</label>
+      <input type="text" id="university" name="university" /><br /><br />
+
+      <!-- Program Study (Radio Buttons) -->
+      <label for="program">Program Studi:</label><br />
+      <input
+        type="radio"
+        id="if"
+        name="program"
+        value="Informatika"
+      />Informatika<br />
+      <input
+        type="radio"
+        id="mtk"
+        name="program"
+        value="Matematika"
+      />Matematika<br />
+      <input type="radio" id="fis" name="program" value="Fisika" />Fisika<br />
+      <input type="radio" id="kim" name="program" value="Kimia" />Kimia<br />
+      <input
+        type="radio"
+        id="stat"
+        name="program"
+        value="Statistika"
+      />Statistika<br />
+      <input
+        type="radio"
+        id="Biologi"
+        name="program"
+        value="Biologi"
+      />Biologi<br />
+
+      <br />
+
+      <!-- Hobbies (Checkboxes) -->
+      <label for="hobbies">Hobbies:</label><br />
+      <input type="checkbox" name="hobbies[]" value="Futsal" />Futsal<br />
+      <input
+        type="checkbox"
+        name="hobbies[]"
+        value="Badminton"
+      />Badminton<br />
+      <input type="checkbox" name="hobbies[]" value="Membaca" />Membaca<br />
+      <input type="checkbox" name="hobbies[]" value="Menulis" />Menulis<br />
+      <input
+        type="checkbox"
+        name="hobbies[]"
+        value="Travelling"
+      />Travelling<br />
+
+      <br />
+
+      <!-- Password -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" /><br /><br />
+
+      <button type="submit">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
